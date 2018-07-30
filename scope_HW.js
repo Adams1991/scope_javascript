@@ -110,23 +110,23 @@
 // #### Episode 5
 //
 
-const scenario = {
-  murderer: 'Miss Scarlet',
-  room: 'Kitchen',
-  weapon: 'Candle Stick'
-};
-
-const changeWeapon = function(newWeapon) {
-  scenario.weapon = newWeapon;
-}
-
-const declareWeapon = function() {
-  return `The weapon is the ${scenario.weapon}.`;
-}
-
-changeWeapon('Revolver');
-const verdict = declareWeapon();
-console.log(verdict);
+// const scenario = {
+//   murderer: 'Miss Scarlet',
+//   room: 'Kitchen',
+//   weapon: 'Candle Stick'
+// };
+//
+// const changeWeapon = function(newWeapon) {
+//   scenario.weapon = newWeapon;
+// }
+//
+// const declareWeapon = function() {
+//   return `The weapon is the ${scenario.weapon}.`;
+// }
+//
+// changeWeapon('Revolver');
+// const verdict = declareWeapon();
+// console.log(verdict);
 
 // ANSWER BEFORE CHECK
 // This will print out The weapon is the Revolver. This is because the value of an object can be reassigned even if the object itself is a constant.
@@ -136,8 +136,8 @@ console.log(verdict);
 
 //
 // #### Episode 6
+
 //
-// ```js
 // let murderer = 'Colonel Mustard';
 //
 // const changeMurderer = function() {
@@ -157,18 +157,24 @@ console.log(verdict);
 // changeMurderer();
 // const verdict = declareMurderer();
 // console.log(verdict);
-// ```
+
+// ANSWER BEFORE CHECK
+// This will print out `The murderer is Mrs. White`. This is because the murderer variables scope covers all the functions and change murderer calls plotTwist within it last which reassigns murderer to Mrs. White
+
+// RESULT
+// As described above.
+
 //
 // #### Episode 7
 //
-// ```js
+
 // let murderer = 'Professor Plum';
 //
 // const changeMurderer = function() {
 //   murderer = 'Mr. Green';
 //
 //   const plotTwist = function() {
-//     let murderer = 'Colonel Mustard';
+//   let murderer = 'Colonel Mustard';
 //
 //     const unexpectedOutcome = function() {
 //       murderer = 'Miss Scarlet';
@@ -187,11 +193,20 @@ console.log(verdict);
 // changeMurderer();
 // const verdict = declareMurderer();
 // console.log(verdict);
-// ```
+
+// ANSWER BEFORE CHECK
+// This will print out `The murderer is Miss. Scarlet`. This is because the murderer variables scope covers all the functions and the change in unexpectedOutcome is the last change to that variable.
+
+// RESULT
+// The murderer is Mr. Green.
+
+// REASON FOR BEING WRONG
+// The let murderer in plotTwist actually means that any changes to murderer made in that function only exist within that functions block.
+
 //
 // #### Episode 8
 //
-// ```js
+
 // const scenario = {
 //   murderer: 'Mrs. Peacock',
 //   room: 'Conservatory',
@@ -226,11 +241,17 @@ console.log(verdict);
 // changeScenario();
 // const verdict = declareWeapon();
 // console.log(verdict);
-// ```
+
+// ANSWER BEFORE CHECK
+// This will print out `The weapon is Candle Stick`. This is because both conditionals above are true within their methods due to the arguements passed and thus the value of that key is changed.
+
+// RESULT
+// The weapon is Candle Stick.
+
 //
 // #### Episode 9
-//
-// ```js
+
+// 
 // let murderer = 'Professor Plum';
 //
 // if (murderer === 'Professor Plum') {
@@ -243,7 +264,13 @@ console.log(verdict);
 //
 // const verdict = declareMurderer();
 // console.log(verdict);
-// ```
+
+// ANSWER BEFORE CHECK
+// This will print out `The weapon is Professor Plum`. This is because although the if statements conditional is true the change to the murder variable is only visible within the if statesments
+
+// RESULT
+// `The weapon is Professor Plum`.
+
 //
 // ### Extensions
 //
