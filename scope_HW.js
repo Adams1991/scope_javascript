@@ -13,21 +13,21 @@
 //
 // #### Episode 1
 
+//
+// const scenario = {
+//   murderer: 'Miss Scarlet',
+//   room: 'Library',
+//   weapon: 'Rope'
+// };
+//
+// const declareMurderer = function() {
+//   return `The murderer is ${scenario.murderer}.`;
+// }
+//
+// const verdict = declareMurderer();
+// console.log(verdict);
 
-const scenario = {
-  murderer: 'Miss Scarlet',
-  room: 'Library',
-  weapon: 'Rope'
-};
-
-const declareMurderer = function() {
-  return `The murderer is ${scenario.murderer}.`;
-}
-
-const verdict = declareMurderer();
-console.log(verdict);
-
-// THOUGHTS BEFORE CHECK
+// ANSWER BEFORE CHECK
 // This will print out `The murderer is Miss Scarlet.` The constant "screnario" scope covers all of the other methods.
 
 // RESULT
@@ -37,7 +37,7 @@ console.log(verdict);
 
 // #### Episode 2#
 //
-// ```js
+
 // const murderer = 'Professor Plum';
 //
 // const changeMurderer = function() {
@@ -51,11 +51,18 @@ console.log(verdict);
 // changeMurderer();
 // const verdict = declareMurderer();
 // console.log(verdict);
-// ```
+
+// ANSWER BEFORE CHECK
+// This will cause an error as const changeMurderer is try to reassign a constant.
+
+// RESULT
+// Already declared error caused.
+
+
 //
 // #### Episode 3
 //
-// ```js
+
 // let murderer = 'Professor Plum';
 //
 // const declareMurderer = function() {
@@ -68,11 +75,18 @@ console.log(verdict);
 //
 // const secondVerdict = `The murderer is ${murderer}.`;
 // console.log('Second Verdict: ', secondVerdict);
-// ```
+
+// ANSWER BEFORE CHECK
+// The first verdict will print out but the second verdict will throw an error as murderer is only in declareMurderer scopes.
+
+// RESULT
+// murderer not defined error
+
+
 //
 // #### Episode 4
 //
-// ```js
+
 // let suspectOne = 'Miss Scarlet';
 // let suspectTwo = 'Professor Plum';
 // let suspectThree = 'Mrs. Peacock';
@@ -85,29 +99,41 @@ console.log(verdict);
 // const suspects = declareAllSuspects();
 // console.log(suspects);
 // console.log(`Suspect three is ${suspectThree}.`);
-// ```
+
+// ANSWER BEFORE CHECK
+// Suspects will print with Colonel Mustard as suspect three and the second print will produce Miss Peacock as suspectThree is only changed within the confines of declareAllSuspects method.
+
+// RESULT
+// As described above.
+
 //
 // #### Episode 5
 //
-// ```js
-// const scenario = {
-//   murderer: 'Miss Scarlet',
-//   room: 'Kitchen',
-//   weapon: 'Candle Stick'
-// };
-//
-// const changeWeapon = function(newWeapon) {
-//   scenario.weapon = newWeapon;
-// }
-//
-// const declareWeapon = function() {
-//   return `The weapon is the ${scenario.weapon}.`;
-// }
-//
-// changeWeapon('Revolver');
-// const verdict = declareWeapon();
-// console.log(verdict);
-// ```
+
+const scenario = {
+  murderer: 'Miss Scarlet',
+  room: 'Kitchen',
+  weapon: 'Candle Stick'
+};
+
+const changeWeapon = function(newWeapon) {
+  scenario.weapon = newWeapon;
+}
+
+const declareWeapon = function() {
+  return `The weapon is the ${scenario.weapon}.`;
+}
+
+changeWeapon('Revolver');
+const verdict = declareWeapon();
+console.log(verdict);
+
+// ANSWER BEFORE CHECK
+// This will print out The weapon is the Revolver. This is because the value of an object can be reassigned even if the object itself is a constant.
+
+// RESULT
+// As described above.
+
 //
 // #### Episode 6
 //
