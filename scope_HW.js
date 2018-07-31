@@ -80,7 +80,11 @@
 // The first verdict will print out but the second verdict will throw an error as murderer is only in declareMurderer scopes.
 
 // RESULT
-// murderer not defined error
+// murderer not defined error.
+
+// REASON FOR BEING WRONG
+// The let muderer at the top had not been uncommented.
+
 
 
 //
@@ -251,7 +255,7 @@
 //
 // #### Episode 9
 
-// 
+//
 // let murderer = 'Professor Plum';
 //
 // if (murderer === 'Professor Plum') {
